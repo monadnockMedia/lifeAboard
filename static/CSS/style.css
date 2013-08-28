@@ -1,7 +1,24 @@
+/*- Style Sheet for Life Aboard -*/
+
+/*- Font Definitions -*/
+@font-face {
+  font-family: handwritten;
+  src: url("../FONT/RujisHandwritingFont.otf") format("opentype");
+}
+
+@font-face {
+  font-family: antique;
+  src: url("../FONT/ModernAntiqua.ttf") format("truetype");
+}
+
+/*- Style Definitions -*/
 * {
 	box-sizing:border-box;
 	margin: 0;
 	padding: 0;
+	font-family: handwritten;
+	font-size:18pt;
+	color:black;
 }
 
 html, body
@@ -49,6 +66,13 @@ html, body
 .topLeft, .topRight
 {
 	border: 3px red dotted;
+	padding:0.5em;
+	color:black;
+}
+
+.topLeft, .bottomLeft
+{
+	float:left;
 }
 
 .bottomLeft, .bottomRight
@@ -56,12 +80,43 @@ html, body
 	border: 3px lime dotted;
 }
 
+.bottomLeft
+{
+	padding:0.5em;
+}
+
 .pageTab
 {
 	border:3px aqua dotted;
+	background-color:#7A0800;
+	color:#BA5400;
+	font-size:0.9em;
+	text-align:center;
+	
 	height:90%;
 	width:15%;
-	float:left;
+	
 	margin:10px;
 	margin-left:19px;
+	margin-top:0px;
+	padding:0.2em;
+	
+	float:left;
+}
+
+H1 {
+	font-family:antique;
+	font-size:1.5em;
+	color:black;
+	text-shadow: 0px 0px 5px #FFD69C;
+	margin-bottom:0.25em;
+}
+
+H2 {
+	margin-top:0.7em;
+	text-shadow: 0px 0px 2px black;
+}
+
+P {
+	text-shadow: 0px 0px 2px black;
 }
