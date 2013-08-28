@@ -104,19 +104,25 @@ html, body
 	float:left;
 }
 
+#imgRight
+{
+	float:right;
+	opacity:0.5;
+}
+
 H1 {
 	font-family:antique;
 	font-size:1.5em;
 	color:black;
-	text-shadow: 0px 0px 5px #FFD69C;
+	text-shadow: 2px 2px 10px #8C5200;
 	margin-bottom:0.25em;
 }
 
 H2 {
 	margin-top:0.7em;
-	text-shadow: 0px 0px 2px black;
+	text-shadow: 0px 0px 2px #8C5200;
 }
 
 P {
-	text-shadow: 0px 0px 2px black;
+	text-shadow: 0px 0px 2px #8C5200;
 }
