@@ -2,22 +2,22 @@
 
 <html>
 
-	<!--Header: Links CSS styles-->
+	<!-- Header: Links CSS styles -->
 	<head>
 		<link rel="stylesheet" href="static/CSS/style.css" type="text/css" media="screen" title="Life Aboard" charset="utf-8">
 	</head>
 	
-	<!--Main Content-->
+	<!-- Main Content -->
 	<body>
+		<!-- Import jQuery -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		
+		
+		
 			<div id ="background">
 				<div class="topContainer inline">
 					<div class="topLeft inline">
-						<H2>May 26th, 1876</H2>
-						<p>Dear little Pet, Cora! It seems as if she was right with me today. How much we miss her! Why could she not be left with us? Four weeks today she was taken sick; called the doctor the night before, but none of us thought 'twas anything serious. But it proved to be membranous croup. She died Monday morning, 3 o'clock May 1st.</p>
-						<H2>June 6th, 1876</H2>
-						<p>I went home Friday on the 3:30 P.M. train. Came back to Cleveland Monday morning. My daughter, Anna, came with me and is now aboard the vessel enjoying herself. She now sits near me reading by the lamp in my room. I miss little Cora so much at home. 'Papa's big girl,' as she said.</p>
-						<H2>Lake Erie, June 22nd, 1876</H2>
-						<p>I bought Edna a napkin ring at Buffalo, also some warp for a rag carpet, and a head stone for Cora's grave. 'Tis the last I can do for the little darling.</p><!--
+						<!--
 				 --></div><div class="topRight inline">
 						<H2>Huron, Ohio, May 9th, 1877</H2>
 						<img id="imgRight" src="static/IMAGES/testImage.jpg" width="300" height="243" alt="Boat">
@@ -36,5 +36,11 @@
 				 --></div><div class="pageTab">The Shipping Buisness<!--
 				 --></div><div class="pageTab">All in a Day's Work
 					</div></div></div>
+					
+					<script>
+							alert("test!");
+							var args = {"authorID":1, "categoryID":5}
+							$("topLeft").load("http://127.0.0.1:8080/lifeAboard/", args)
+					</script>
 	</body>
 </html>
