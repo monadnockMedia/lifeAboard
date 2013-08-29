@@ -119,10 +119,12 @@ H1 {
 }
 
 H2 {
-	margin-top:0.7em;
 	text-shadow: 0px 0px 2px #8C5200;
+	line-height:1em;
 }
 
 P {
 	text-shadow: 0px 0px 2px #8C5200;
+	line-height:1.05em;
+	margin:0.5em;
 }

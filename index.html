@@ -2,17 +2,16 @@
 
 <html>
 
-	<!-- Header: Links CSS styles -->
+	<!-- Header: Link CSS Styles Sheet && Include jQuery from Google -->
 	<head>
 		<link rel="stylesheet" href="static/CSS/style.css" type="text/css" media="screen" title="Life Aboard" charset="utf-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	</head>
 	
 	<!-- Main Content -->
 	<body>
-		<!-- Import jQuery -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		
-		
+
 		
 			<div id ="background">
 				<div class="topContainer inline">
@@ -37,10 +36,10 @@
 				 --></div><div class="pageTab">All in a Day's Work
 					</div></div></div>
 					
-					<script>
-							alert("test!");
-							var args = {"authorID":1, "categoryID":5}
-							$("topLeft").load("http://127.0.0.1:8080/lifeAboard/", args)
-					</script>
+			<script>
+					var args = {"authorID":1, "categoryID":1}
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", args)
+			</script>
+
 	</body>
 </html>
