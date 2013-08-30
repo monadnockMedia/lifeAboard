@@ -10,35 +10,97 @@
 	
 	<!-- Main Content -->
 	<body>
-		
-
-		
 			<div id ="background">
 				<div class="topContainer inline">
 					<div class="topLeft inline">
 						<!--
 				 --></div><div class="topRight inline">
-						<H2>Huron, Ohio, May 9th, 1877</H2>
-						<img id="imgRight" src="static/IMAGES/testImage.jpg" width="300" height="243" alt="Boat">
-						<p>Arrived here Sunday morning. Lay at anchor off here all night. The wind has been blowing a gale from northeast for three days...We have a boy baby, born at 10:30 last night. Mother and child doing nicely. Edna is much pleased with the baby. Anna don't seem to like it much.</p>
-						<H2>Buffalo, N.Y., August 28th, 1877</H2>
-						<p>When in Cleveland last week on way to Huron, I bought an easy chair in hair cloth for my wife, price $11.00. Yesterday I bought half dozen handsome walnut chairs for the dining room.</p>
-						<H2>Sandusky, Ohio, May 1st, 1878</H2>
-						<p>Went home last evening; returned this morning. Found all well there. Baby Austin had not forgotten me...</p>
 					</div></div>
 				<div class="bottomContainer inline">
 					<div class="bottomLeft inline"><h1>The Journal of Shipman Davey</h1><br><h1>Oscar Smith - Captain's Log</h1></div><!--
 				 --><div class="bottomRight inline">
-						<div class="pageTab">Keeping the Ship Afloat<!--
-				 --></div><div class="pageTab">Thoughts of Home<!--
-				 --></div><div class="pageTab">Life Aboard<!--
-				 --></div><div class="pageTab">The Shipping Buisness<!--
-				 --></div><div class="pageTab">All in a Day's Work
+						<div class="pageTab1 active">1<!--
+				 --></div><div class="pageTab2">2<!--
+				 --></div><div class="pageTab3">3<!--
+				 --></div><div class="pageTab4">4<!--
+				 --></div><div class="pageTab5">5
 					</div></div></div>
 					
 			<script>
-					var args = {"authorID":1, "categoryID":1}
-					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", args)
+					var argsLeft = {"authorID":1, "categoryID":1}
+					
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", argsLeft);
+					$(".topLeft").animate({opacity:1}, "slow");
+
+				$(".pageTab1").click(function(){
+					$(".topLeft").finish();
+					$(".topLeft").animate({opacity:0}, 0);
+					$(".pageTab1").removeClass("active");
+					$(".pageTab2").removeClass("active");
+					$(".pageTab3").removeClass("active");
+					$(".pageTab4").removeClass("active");
+					$(".pageTab5").removeClass("active");
+					$(this).addClass("active");
+					var argsLeft = {"authorID":1, "categoryID":1}
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", argsLeft);
+					$(".topLeft").animate({opacity:1}, "slow");
+				})
+				
+				$(".pageTab2").click(function(){
+					$(".topLeft").finish();
+					$(".topLeft").animate({opacity:0}, 0);
+					$(".pageTab1").removeClass("active");
+					$(".pageTab2").removeClass("active");
+					$(".pageTab3").removeClass("active");
+					$(".pageTab4").removeClass("active");
+					$(".pageTab5").removeClass("active");
+					$(this).addClass("active");
+					var argsLeft = {"authorID":1, "categoryID":2}
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", argsLeft);
+					$(".topLeft").animate({opacity:1}, "slow");
+				})
+				
+				$(".pageTab3").click(function(){
+					$(".topLeft").finish();
+					$(".topLeft").animate({opacity:0}, 0);
+					$(".pageTab1").removeClass("active");
+					$(".pageTab2").removeClass("active");
+					$(".pageTab3").removeClass("active");
+					$(".pageTab4").removeClass("active");
+					$(".pageTab5").removeClass("active");
+					$(this).addClass("active");
+					var argsLeft = {"authorID":1, "categoryID":3}
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", argsLeft);
+					$(".topLeft").animate({opacity:1}, "slow");
+				})
+				
+				$(".pageTab4").click(function(){
+					$(".topLeft").finish();
+					$(".topLeft").animate({opacity:0}, 0);
+					$(".pageTab1").removeClass("active");
+					$(".pageTab2").removeClass("active");
+					$(".pageTab3").removeClass("active");
+					$(".pageTab4").removeClass("active");
+					$(".pageTab5").removeClass("active");
+					$(this).addClass("active");
+					var argsLeft = {"authorID":1, "categoryID":4}
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", argsLeft);
+					$(".topLeft").animate({opacity:1}, "slow");
+				})
+				
+				$(".pageTab5").click(function(){
+					$(".topLeft").finish();
+					$(".topLeft").animate({opacity:0}, 0);
+					$(".pageTab1").removeClass("active");
+					$(".pageTab2").removeClass("active");
+					$(".pageTab3").removeClass("active");
+					$(".pageTab4").removeClass("active");
+					$(".pageTab5").removeClass("active");
+					$(this).addClass("active");
+					var argsLeft = {"authorID":1, "categoryID":5}
+					$(".topLeft").load("http://127.0.0.1:8080/lifeAboard/", argsLeft);
+					$(".topLeft").animate({opacity:1}, "slow");
+				})
 			</script>
 
 	</body>
