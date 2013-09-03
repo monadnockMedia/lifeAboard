@@ -70,7 +70,7 @@ P
 .topContainer
 {
 	height:80%;
-	border: 5px gray solid;
+	border: 5px gray transparent;
 }
 
 .bottomContainer
@@ -89,7 +89,7 @@ P
 
 .topLeft, .topRight
 {
-	border: 3px red dotted;
+	border: 3px red transparent;
 	padding:0.5em;
 	color:black;
 	opacity:0;
@@ -110,7 +110,7 @@ P
 	padding:0.5em;
 }
 
-.pageTab1, .pageTab2, .pageTab3, .pageTab4, .pageTab5
+.pageTab
 {
 	/*border:3px aqua dotted;*/
 	background-color:#7A0800;
@@ -134,79 +134,20 @@ P
 	border: 5px solid #420000;
 }
 
-.pageTab1.active:after
+#arrow
 {
+    opacity:0;
     position:absolute;
     content:" ";
-    margin-top:-63px;
-	margin-left:-50px;
+    margin-top:-35px;
     width:0px;
     height:0px;
-    
     border-left: 49px solid transparent;
 	border-right: 49px solid transparent;
 	
-	border-bottom: 60px solid #420000;
-}
-
-.pageTab2.active:after
-{
-    position:absolute;
-    content:" ";
-    margin-top:-63px;
-	margin-left:-50px;
-    width:0px;
-    height:0px;
-    
-    border-left: 49px solid transparent;
-	border-right: 49px solid transparent;
+	border-bottom: 35px solid #420000;
 	
-	border-bottom: 60px solid #420000;
-}
-
-.pageTab3.active:after
-{
-    position:absolute;
-    content:" ";
-    margin-top:-63px;
-	margin-left:-50px;
-    width:0px;
-    height:0px;
-    
-    border-left: 49px solid transparent;
-	border-right: 49px solid transparent;
-	
-	border-bottom: 60px solid #420000;
-}
-
-.pageTab4.active:after
-{
-    position:absolute;
-    content:" ";
-    margin-top:-63px;
-	margin-left:-50px;
-    width:0px;
-    height:0px;
-    
-    border-left: 49px solid transparent;
-	border-right: 49px solid transparent;
-	
-	border-bottom: 60px solid #420000;
-}
-
-.pageTab5.active:after
-{
-    position:absolute;
-    content:" ";
-    margin-top:-63px;
-	margin-left:-50px;
-    width:0px;
-    height:0px;
-    
-    border-left: 49px solid transparent;
-	border-right: 49px solid transparent;
-	
-	border-bottom: 60px solid #420000;
+	z-index:10;
 }
 
 #imgRight
