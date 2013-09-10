@@ -3,17 +3,16 @@
 /*- Font Definitions -*/
 @font-face {
   font-family: handwritten;
-  src: url("../FONT/RujisHandwritingFont.otf") format("opentype");
+  src: url("../FONTS/RujisHandwritingFont.otf") format("opentype");
 }
 
 @font-face {
   font-family: antique;
-  src: url("../FONT/ModernAntiqua.ttf") format("truetype");
+  src: url("../FONTS/ModernAntiqua.ttf") format("truetype");
 }
 
 /*- Style Definitions -*/
 * {
-	box-sizing:border-box;
 	margin: 0;
 	padding: 0;
 	font-family: handwritten;
@@ -23,9 +22,11 @@
 
 html, body
 {
-	width: 100%;
-	height: 100%;
+	width: 1280px;
+	height: 1024px;
 	background-color:black;
+	background-image:url('../IMAGES/matt/BackgroundWithLabel.png');
+	background-repeat:no-repeat;
 }
 
 H1
@@ -33,14 +34,15 @@ H1
 	font-family:antique;
 	font-size:1.5em;
 	color:black;
-	text-shadow: 2px 2px 10px #8C5200;
 	margin-bottom:0.25em;
 }
 
 H2
 {
-	text-shadow: 0px 0px 2px #8C5200;
-	line-height:1em;
+	font-family:antique;
+	font-size:1.5em;
+	color:black;
+	margin-bottom:0.25em;
 }
 
 P
@@ -50,108 +52,218 @@ P
 	margin:0.5em;
 }
 
-#background
+/* Altered book classes from BOOKLET/css */
+.booklet
 {
-	width:1280px;
-	height:1024px;
-	background-image:url('../IMAGES/bgTestImage.png');
+    -moz-box-shadow:0px 0px 1px #fff;
+    -webkit-box-shadow:0px 0px 1px #fff;
+    box-shadow:0px 0px 1px #fff;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+	z-index:0;
 }
 
-.inline
+.book_wrapper
 {
-	display: inline-block;
+    margin:0 auto;
+    padding-top:40px;
+    width:1200px;
+    height:780px;
+    position:relative;
+	background-color: transparent;
+	/*background:transparent url('../IMAGES/bg.png') no-repeat 9px 27px;*/
 }
 
-.topContainer, .bottomContainer
+.b-page-cover
 {
-	width: 100%;
+	text-align:center;
 }
 
-.topContainer
+.b-page-cover h1
 {
-	height:80%;
-	border: 5px gray transparent;
+	padding-top:200px;
+	color: #7A6306;
 }
 
-.bottomContainer
+.booklet .b-wrap-left
 {
-	height:20%;
-	border: 5px gray transparent;
+	-webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background:url('../IMAGES/matt/page_bg_left.png') no-repeat;
 }
 
-.topLeft, .topRight, .bottomLeft, .bottomRight
+.booklet .b-wrap-right
 {
-	width: 50%;
-	height: 100%;
-	overflow:hidden;
-	text-overflow:ellipsis;
+	-webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background:url('../IMAGES/matt/page_bg_right.png') no-repeat;
 }
 
-.topLeft, .topRight
+.booklet .b-counter
 {
-	border: 3px red transparent;
-	padding:0.5em;
-	color:black;
-	opacity:0;
+    bottom:10px;
+    position:absolute;
+    display:block;
+    width:90%;
+    height:20px;
+    color:#222;
+    text-align:center;
+    font-size:1em;
+    padding:5px 0 0;
+    background:transparent;
+    opacity:0.8;
+	text-align:center;
+	font-family:antique;
+	
 }
 
-.topLeft, .bottomLeft
+.booklet .b-wrap-right img
 {
 	float:left;
 }
 
-.bottomLeft, .bottomRight
+.booklet .b-wrap-left img
 {
-	border: 3px lime transparent;
+	float:right;
 }
 
-.bottomLeft
+.book_wrapper img
 {
-	padding:0.5em;
+    margin:5px 0px 5px 5px;
+    width:300px;
+    padding:12px;
+}
+
+a#next_page_button, a#prev_page_button
+{
+	z-index:10;
+    display:hidden;
+    position:absolute;
+    width:41px;
+    height:40px;
+    cursor:pointer;
+    margin-top:-20px;
+    top:50%;
+}
+
+a#prev_page_button
+{
+    left:250px;
+	top:753px;
+}
+
+a#next_page_button
+{
+    right:250px;
+	top:753px;
+    background-position:-41px -40px;
+}
+
+a#next_page_button:hover
+{
+    background-position:-41px 0px;
+}
+
+a#prev_page_button:hover
+{
+    background-position:0px 0px;
+}
+
+.loading
+{
+    width:160px;
+    height:56px;
+    position: absolute;
+    top:50%;
+    margin-top:-28px;
+    right:135px;
+    line-height:56px;
+    color:#fff;
+    padding-left:60px;
+    font-size:15px;
+    background: #000 url('../IMAGES/ajax-loader.gif') no-repeat 10px 50%;
+    opacity: 0.7;
+    z-index:9999;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+}
+
+#bottom {
+	box-sizing:border-box;
+	display:inline-box;
+	width:1280px;
+	height:204px;
+}
+
+.btmLeft {
+	box-sizing:border-box;
+	width:660px;
+	height:100%;
+}
+
+.btmRight {
+	position:absolute;
+	box-sizing:border-box;
+	width:640px;
+	height:244px;
+	left:640px;
+	top:780px;
+}
+
+.btmLeft {
+	float:left;
+	background-repeat:no-repeat;
+}
+
+.captainSelect {
+	background-image:url('../IMAGES/matt/BookSpines_03.png');
+}
+
+.daveySelect {
+	background-image:url('../IMAGES/matt/BookSpines_02.png');
+}
+
+.journalSpine {
+	width:90%;
+	height: 45px;
+}
+
+.btmRight {
+	float:right;
 }
 
 .pageTab
 {
 	/*border:3px aqua dotted;*/
-	background-color:#7A0800;
+	background-color:transparent;
 	color:#BA5400;
 	font-size:0.9em;
 	text-align:center;
 	
-	height:90%;
-	width:15%;
+	height:210px;
+	width:116px;
 	
-	margin:10px;
-	margin-left:19px;
+	margin-left:4px;
 	margin-top:0px;
-	padding:0.2em;
+	padding:00em;
 	
 	float:left;
+	background-image:url('../IMAGES/matt/Bookmarks_00.png');
+	background-repeat:no-repeat;
 }
 
 .active
 {
-	border: 5px solid #420000;
-}
-
-#arrow
-{
-    opacity:0;
-    position:absolute;
-    content:" ";
-    margin-top:-35px;
-    width:0px;
-    height:0px;
-    border-left: 49px solid transparent;
-	border-right: 49px solid transparent;
-	
-	border-bottom: 35px solid #420000;
-	
 	z-index:10;
-}
-
-#imgRight
-{
-	float:right;
-	opacity:0.5;
+	background-image:url('../IMAGES/matt/Bookmarks_01.png');
 }
