@@ -52,6 +52,36 @@ P
 	margin:0.5em;
 }
 
+.selectSign {
+	display:block;
+	position:absolute;
+	top:873px;
+	left: 320px;
+	z-index:11;
+}
+
+.coverLeft {
+	display:inline-block;
+	background-image:url('../IMAGES/matt/CaptainCover.png');
+	background-repeat:no-repeat;
+	z-index:11;
+	width:650px;
+	height:100%;
+	float:left;
+	margin-right:-100px;
+}
+
+.coverRight {
+	display:inline-block;
+	background-image:url('../IMAGES/matt/DavyCover.png');
+	background-repeat:no-repeat;
+	z-index:11;
+	width:640px;
+	height:100%;
+	float:right;
+	margin-right:0px;
+}
+
 /* Altered book classes from BOOKLET/css */
 .booklet
 {
@@ -68,11 +98,13 @@ P
 {
     margin:0 auto;
     padding-top:40px;
-    width:1200px;
-    height:780px;
+    width:1280px;
+    height:900px;
     position:relative;
 	background-color: transparent;
-	/*background:transparent url('../IMAGES/bg.png') no-repeat 9px 27px;*/
+	background-image:url('../IMAGES/matt/BookOpenPreComp_Scaled.png');
+	z-index:0;
+	background-repeat:no-repeat;
 }
 
 .b-page-cover
@@ -95,6 +127,7 @@ P
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background:url('../IMAGES/matt/page_bg_left.png') no-repeat;
+	z-index:0;
 }
 
 .booklet .b-wrap-right
@@ -106,6 +139,7 @@ P
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     background:url('../IMAGES/matt/page_bg_right.png') no-repeat;
+	z-index:0;
 }
 
 .booklet .b-counter
@@ -206,9 +240,12 @@ a#prev_page_button:hover
 }
 
 .btmLeft {
+	position:absolute;
 	box-sizing:border-box;
 	width:660px;
 	height:100%;
+	left:0px;
+	top:822px;
 }
 
 .btmRight {
@@ -254,16 +291,16 @@ a#prev_page_button:hover
 	width:116px;
 	
 	margin-left:4px;
-	margin-top:0px;
+	margin-top:7px;
 	padding:00em;
 	
 	float:left;
 	background-image:url('../IMAGES/matt/Bookmarks_00.png');
 	background-repeat:no-repeat;
+	z-index:10;
 }
 
-.active
-{
-	z-index:10;
-	background-image:url('../IMAGES/matt/Bookmarks_01.png');
+.hidden {
+	display:none;
 }
+

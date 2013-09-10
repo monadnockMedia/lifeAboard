@@ -28,12 +28,12 @@ var loaded			= 0;
 					easeIn:             'easeInQuad',                    // easing method for first half of transition
 					easeOut:            'easeOutQuad',                   // easing method for second half of transition
 
-					closed:             true,                           // start with the book "closed", will add empty pages to beginning and end of book
+					closed:             false,                           // start with the book "closed", will add empty pages to beginning and end of book
 					closedFrontTitle:   "Beginning",						  // used with "closed", "menu" and "pageSelector", determines title of blank starting page
 					closedFrontChapter: "Beginning of Book",                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank starting page
 					closedBackTitle:    "End",                            // used with "closed", "menu" and "pageSelector", determines chapter name of blank ending page
 					closedBackChapter:  "End of Book",                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
-					covers:             true,                           // used with  "closed", makes first and last pages into covers, without page numbers (if enabled)
+					covers:             false,                           // used with  "closed", makes first and last pages into covers, without page numbers (if enabled)
 					autoCenter:         false, 
 					
 					pagePadding:        5,                              // padding for each page wrapper
