@@ -1,4 +1,8 @@
+
+
 /*- Style Sheet for Life Aboard -*/
+
+
 
 /*- Font Definitions -*/
 @font-face {
@@ -11,7 +15,9 @@
   src: url("../FONTS/ModernAntiqua.ttf") format("truetype");
 }
 
-/*- Style Definitions -*/
+
+
+/*- Overall Page Formatting -*/
 * {
 	margin: 0;
 	padding: 0;
@@ -52,7 +58,42 @@ P
 	margin:0.5em;
 }
 
-.selectSign {
+#bottom
+{
+	box-sizing:border-box;
+	display:inline-box;
+	width:1280px;
+	height:204px;
+}
+
+.btmLeft
+{
+	position:absolute;
+	box-sizing:border-box;
+	width:660px;
+	height:100%;
+	left:0px;
+	top:822px;
+	float:left;
+	background-repeat:no-repeat;
+}
+
+.btmRight
+{
+	position:absolute;
+	box-sizing:border-box;
+	width:640px;
+	height:244px;
+	left:640px;
+	top:780px;
+	float:right;
+}
+
+
+
+/* Selectors / Clickables / Navigation */
+.selectSign
+{
 	display:block;
 	position:absolute;
 	top:873px;
@@ -60,7 +101,8 @@ P
 	z-index:11;
 }
 
-.coverLeft {
+.coverLeft
+{
 	display:inline-block;
 	background-image:url('../IMAGES/matt/CaptainCover.png');
 	background-repeat:no-repeat;
@@ -71,7 +113,8 @@ P
 	margin-right:-100px;
 }
 
-.coverRight {
+.coverRight
+{
 	display:inline-block;
 	background-image:url('../IMAGES/matt/DavyCover.png');
 	background-repeat:no-repeat;
@@ -82,18 +125,59 @@ P
 	margin-right:0px;
 }
 
-/* Altered book classes from BOOKLET/css */
-.booklet
+.journalSpine
 {
-    -moz-box-shadow:0px 0px 1px #fff;
-    -webkit-box-shadow:0px 0px 1px #fff;
-    box-shadow:0px 0px 1px #fff;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    border-radius:10px;
-	z-index:0;
+	width:90%;
+	height: 45px;
 }
 
+.captainSelect
+{
+	background-image:url('../IMAGES/matt/BookSpines_03.png');
+}
+
+.daveySelect
+{
+	background-image:url('../IMAGES/matt/BookSpines_02.png');
+}
+
+.pageTab
+{
+	/*border:3px aqua dotted;*/
+	background-color:transparent;
+	color:#BA5400;
+	font-size:0.9em;
+	text-align:center;
+	
+	height:210px;
+	width:116px;
+	
+	margin-left:4px;
+	margin-top:7px;
+	padding:00em;
+	
+	float:left;
+	background-image:url('../IMAGES/tabs/ribbon_blue.png');
+	background-repeat:no-repeat;
+	z-index:10;
+}
+
+.pageTabRedActive {
+	background-image:url('../IMAGES/tabs/ribbon_red_active.png');
+}
+
+.pageTabBlueActive {
+	background-image:url('../IMAGES/tabs/ribbon_blue_active.png');
+}
+
+.pageTab img
+{
+	margin-top:17px;
+}
+
+
+
+/* CSS for BookletJS */
 .book_wrapper
 {
     margin:0 auto;
@@ -107,15 +191,22 @@ P
 	background-repeat:no-repeat;
 }
 
-.b-page-cover
+.book_wrapper img
 {
-	text-align:center;
+    margin:5px 0px 5px 5px;
+    width:300px;
+    padding:12px;
 }
 
-.b-page-cover h1
+.booklet
 {
-	padding-top:200px;
-	color: #7A6306;
+    -moz-box-shadow:0px 0px 1px #fff;
+    -webkit-box-shadow:0px 0px 1px #fff;
+    box-shadow:0px 0px 1px #fff;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+	z-index:0;
 }
 
 .booklet .b-wrap-left
@@ -142,6 +233,16 @@ P
 	z-index:0;
 }
 
+.booklet .b-wrap-right img
+{
+	float:left;
+}
+
+.booklet .b-wrap-left img
+{
+	float:right;
+}
+
 .booklet .b-counter
 {
     bottom:10px;
@@ -157,24 +258,6 @@ P
     opacity:0.8;
 	text-align:center;
 	font-family:antique;
-	
-}
-
-.booklet .b-wrap-right img
-{
-	float:left;
-}
-
-.booklet .b-wrap-left img
-{
-	float:right;
-}
-
-.book_wrapper img
-{
-    margin:5px 0px 5px 5px;
-    width:300px;
-    padding:12px;
 }
 
 a#next_page_button, a#prev_page_button
@@ -232,75 +315,7 @@ a#prev_page_button:hover
     border-radius:20px;
 }
 
-#bottom {
-	box-sizing:border-box;
-	display:inline-box;
-	width:1280px;
-	height:204px;
-}
-
-.btmLeft {
-	position:absolute;
-	box-sizing:border-box;
-	width:660px;
-	height:100%;
-	left:0px;
-	top:822px;
-}
-
-.btmRight {
-	position:absolute;
-	box-sizing:border-box;
-	width:640px;
-	height:244px;
-	left:640px;
-	top:780px;
-}
-
-.btmLeft {
-	float:left;
-	background-repeat:no-repeat;
-}
-
-.captainSelect {
-	background-image:url('../IMAGES/matt/BookSpines_03.png');
-}
-
-.daveySelect {
-	background-image:url('../IMAGES/matt/BookSpines_02.png');
-}
-
-.journalSpine {
-	width:90%;
-	height: 45px;
-}
-
-.btmRight {
-	float:right;
-}
-
-.pageTab
+.hidden
 {
-	/*border:3px aqua dotted;*/
-	background-color:transparent;
-	color:#BA5400;
-	font-size:0.9em;
-	text-align:center;
-	
-	height:210px;
-	width:116px;
-	
-	margin-left:4px;
-	margin-top:7px;
-	padding:00em;
-	
-	float:left;
-	background-image:url('../IMAGES/matt/Bookmarks_00.png');
-	background-repeat:no-repeat;
-	z-index:10;
-}
-
-.hidden {
 	display:none;
 }
-

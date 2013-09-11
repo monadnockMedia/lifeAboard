@@ -1,77 +1,49 @@
 
 
+
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e){
 	e.preventDefault();
 	
-	//Hide main menu
-	$(".coverLeft").addClass("hidden");
-	$(".coverRight").addClass("hidden");
-	$(".selectSign").addClass("hidden");
+	//Hide main menu	
+	$(".coverLeft").fadeOut(1000);
+	$(".coverRight").fadeOut(1000);
+	$(".selectSign").fadeOut(1000);
 	
 	//Set correct page tabs
-	$(".pageTab").each(function(index) {
-		console.log($(this).attr("categoryID"));
-
-		if ($(this).attr("categoryID") == 1) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_02.png')");
-		} else if ($(this).attr("categoryID") == 2) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_06.png')");
-		} else if ($(this).attr("categoryID") == 3) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_10.png')");
-		} else if ($(this).attr("categoryID") == 4) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_14.png')");
-		} else if ($(this).attr("categoryID") == 5) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_18.png')");
-		}
-	});
+	$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_blue.png')");
 	
 	//Set correct bookspine highlight
 	$(".btmLeft").removeClass("daveySelect");
 	$(".btmLeft").addClass("captainSelect");
 	
+	
 	//Show the book + tabs
-	$(".btmLeft").removeClass("hidden");
-	$(".btmRight").removeClass("hidden");
-	$(".book_wrapper").removeClass("hidden");
+	$(".btmLeft").fadeIn(1000);
+	$(".btmRight").fadeIn(1000);
+	$(".book_wrapper").fadeIn(1000);
 })
 
 $(".coverRight").click(function(e){
 	e.preventDefault();
 	
-	//Hide main menu
-	$(".coverLeft").addClass("hidden");
-	$(".coverRight").addClass("hidden");
-	$(".selectSign").addClass("hidden");
+	//Hide main menu	
+	$(".coverLeft").fadeOut(1000);
+	$(".coverRight").fadeOut(1000);
+	$(".selectSign").fadeOut(1000);
 	
 	//Set correct page tabs
-	$(".pageTab").each(function(index) {
-		console.log($(this).attr("categoryID"));
-		
-		if ($(this).attr("categoryID") == 1) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_00.png')");
-		} else if ($(this).attr("categoryID") == 2) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_04.png')");
-		} else if ($(this).attr("categoryID") == 3) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_08.png')");
-		} else if ($(this).attr("categoryID") == 4) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_12.png')");
-		} else if ($(this).attr("categoryID") == 5) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_16.png')");
-		}
-	});
+	$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
 	
 	//Set correct bookspine highlight
 	$(".btmLeft").removeClass("captainSelect");
 	$(".btmLeft").addClass("daveySelect");
 	
 	//Show the book + tabs
-	$(".btmLeft").removeClass("hidden");
-	$(".btmRight").removeClass("hidden");
-	$(".book_wrapper").removeClass("hidden");
+	$(".btmLeft").fadeIn(1000);
+	$(".btmRight").fadeIn(1000);
+	$(".book_wrapper").fadeIn(1000);
 })
-
-
 
 
 
@@ -85,35 +57,18 @@ $(".pageTab").click(function(e){
 	e.preventDefault();
 	
 	if ($(".btmLeft").hasClass("captainSelect")) {
-		if ($(this).attr("categoryID") == 1) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_03.png')");
-		} else if ($(this).attr("categoryID") == 2) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_07.png')");
-		} else if ($(this).attr("categoryID") == 3) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_11.png')");
-		} else if ($(this).attr("categoryID") == 4) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_15.png')");
-		} else if ($(this).attr("categoryID") == 5) {
-			$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_19.png')");
-		}
+		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_blue.png')");
+		$(this).css("background-image", "url('./IMAGES/tabs/ribbon_blue_active.png')");
 	}
 		
 	if ($(".btmLeft").hasClass("daveySelect")) {
-		if ($(this).attr("categoryID") == 1) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_01.png')");
-		} else if ($(this).attr("categoryID") == 2) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_05.png')");
-		} else if ($(this).attr("categoryID") == 3) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_09.png')");
-		} else if ($(this).attr("categoryID") == 4) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_13.png')");
-		} else if ($(this).attr("categoryID") == 5) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_17.png')");
-		}
+		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
+		$(this).css("background-image", "url('./IMAGES/tabs/ribbon_red_active.png')");
 	}
 	
 	$mybook.booklet("next");
 })
+
 
 
 /* Journal Spine chooses which book you are viewing */
@@ -124,36 +79,12 @@ $(".journalSpine").click(function(e){
 		$(".btmLeft").removeClass("daveySelect");
 		$(".btmLeft").addClass("captainSelect");
 		
-		$(".pageTab").each(function(index) {			
-			if ($(this).attr("categoryID") == 1) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_02.png')");
-			} else if ($(this).attr("categoryID") == 2) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_06.png')");
-			} else if ($(this).attr("categoryID") == 3) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_10.png')");
-			} else if ($(this).attr("categoryID") == 4) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_14.png')");
-			} else if ($(this).attr("categoryID") == 5) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_18.png')");
-			}
-		});
+		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_blue.png')");
 	} else if ($(this).attr("author") == 2) {
 		$(".btmLeft").removeClass("captainSelect");
 		$(".btmLeft").addClass("daveySelect");
 		
-		$(".pageTab").each(function(index) {			
-			if ($(this).attr("categoryID") == 1) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_00.png')");
-			} else if ($(this).attr("categoryID") == 2) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_04.png')");
-			} else if ($(this).attr("categoryID") == 3) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_08.png')");
-			} else if ($(this).attr("categoryID") == 4) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_12.png')");
-			} else if ($(this).attr("categoryID") == 5) {
-				$(this).css("background-image", "url('./IMAGES/matt/Bookmarks_16.png')");
-			}
-		});
+		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
 	}	
 })
 
