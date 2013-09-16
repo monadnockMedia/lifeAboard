@@ -4,11 +4,12 @@
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e){
 	e.preventDefault();
+	currentAuthor = 1;
 	
 	//Hide main menu	
-	$(".coverLeft").fadeOut(1000);
-	$(".coverRight").fadeOut(1000);
-	$(".selectSign").fadeOut(1000);
+	$(".coverLeft").fadeOut( 500 );
+	$(".coverRight").fadeOut( 500 );
+	$(".selectSign").fadeOut( 500 );
 	
 	//Set correct page tabs
 	$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_blue.png')");
@@ -19,18 +20,19 @@ $(".coverLeft").click(function(e){
 	
 	
 	//Show the book + tabs
-	$(".btmLeft").fadeIn(1000);
-	$(".btmRight").fadeIn(1000);
-	$(".book_wrapper").fadeIn(1000);
+	$(".btmLeft").slideUp( 500 ).delay( 550 ).fadeIn( 400 );
+	$(".book_wrapper").slideUp( 500 ).delay( 1150 ).fadeIn( 400 );
+	$(".btmRight").slideUp( 500 ).delay( 1550 ).fadeIn( 400 );
 })
 
 $(".coverRight").click(function(e){
 	e.preventDefault();
+	currentAuthor = 2;
 	
 	//Hide main menu	
-	$(".coverLeft").fadeOut(1000);
-	$(".coverRight").fadeOut(1000);
-	$(".selectSign").fadeOut(1000);
+	$(".coverLeft").fadeOut( 500 );
+	$(".coverRight").fadeOut( 500 );
+	$(".selectSign").fadeOut( 500 );
 	
 	//Set correct page tabs
 	$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
@@ -40,20 +42,21 @@ $(".coverRight").click(function(e){
 	$(".btmLeft").addClass("daveySelect");
 	
 	//Show the book + tabs
-	$(".btmLeft").fadeIn(1000);
-	$(".btmRight").fadeIn(1000);
-	$(".book_wrapper").fadeIn(1000);
+	$(".btmLeft").slideUp( 500 ).delay( 550 ).fadeIn( 400 );
+	$(".book_wrapper").slideUp( 500 ).delay( 1150 ).fadeIn( 400 );
+	$(".btmRight").slideUp( 500 ).delay( 1550 ).fadeIn( 400 );	
 })
 
 
 
 /* Page Tabs that load journal entries at bottom right */
 $(".pageTab").click(function(e){
-	/*argsLeft.categoryID = $(this).attr("categoryID");
-	console.log("cat id:" + argsLeft.categoryID);
-	$(".topLeft").load(url, argsLeft);
-	$(".topLeft").animate({opacity:1}, "slow");
-	*/
+	ajSettings.data = {"authorID":1, "categoryID":1};
+	ajSettings.data.categoryID = $(this).attr("categoryID");
+	ajSettings.data.authorID = currentAuthor;
+	
+	ajResp = $.ajax(ajSettings);
+	
 	e.preventDefault();
 	
 	if ($(".btmLeft").hasClass("captainSelect")) {
@@ -65,9 +68,17 @@ $(".pageTab").click(function(e){
 		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
 		$(this).css("background-image", "url('./IMAGES/tabs/ribbon_red_active.png')");
 	}
-	
-	$mybook.booklet("next");
 })
+
+$( document ).ajaxComplete(function() {
+	blahblah();
+});
+
+function blahblah() {
+	$(".b-load").empty();
+	$(".b-load").append(ajResp.responseText);
+	resetBook();
+}
 
 
 
@@ -75,16 +86,20 @@ $(".pageTab").click(function(e){
 $(".journalSpine").click(function(e){
 	e.preventDefault();
 	
+	$(".b-load").empty();
+	
 	if ($(this).attr("author") == 1) {
+		currentAuthor = 1;
 		$(".btmLeft").removeClass("daveySelect");
-		$(".btmLeft").addClass("captainSelect");
-		
+		$(".btmLeft").addClass("captainSelect");		
 		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_blue.png')");
 	} else if ($(this).attr("author") == 2) {
+		currentAuthor = 2;
 		$(".btmLeft").removeClass("captainSelect");
 		$(".btmLeft").addClass("daveySelect");
 		
 		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
 	}	
 })
+
 

@@ -1,10 +1,18 @@
-var argsLeft = {"authorID":1, "categoryID":1}
-var url = "http://server.local:8080/lifeAboard/"
+var ajSettings = $.ajaxSettings;
+var currentAuthor = 1;
+
+ajSettings.url = "http://server.local:8080/lifeAboard/";
+ajSettings.data = {"authorID":1, "categoryID":1};
+
+var ajResp;
+var htmlData;
+
 
 
 /* Runs after page loaded */
 $(document).ready(init);
 
 function init(){
-	
+
 }
+
