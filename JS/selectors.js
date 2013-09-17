@@ -18,6 +18,8 @@ $(".coverLeft").click(function(e){
 	$(".btmLeft").removeClass("daveySelect");
 	$(".btmLeft").addClass("captainSelect");
 	
+	ajSettings.data = {"authorID":1, "categoryID":1};
+	ajResp = $.ajax(ajSettings);
 	
 	//Show the book + tabs
 	$(".btmLeft").slideUp( 500 ).delay( 550 ).fadeIn( 400 );
@@ -41,6 +43,9 @@ $(".coverRight").click(function(e){
 	$(".btmLeft").removeClass("captainSelect");
 	$(".btmLeft").addClass("daveySelect");
 	
+	ajSettings.data = {"authorID":2, "categoryID":1};
+	ajResp = $.ajax(ajSettings);
+	
 	//Show the book + tabs
 	$(".btmLeft").slideUp( 500 ).delay( 550 ).fadeIn( 400 );
 	$(".book_wrapper").slideUp( 500 ).delay( 1150 ).fadeIn( 400 );
@@ -51,7 +56,6 @@ $(".coverRight").click(function(e){
 
 /* Page Tabs that load journal entries at bottom right */
 $(".pageTab").click(function(e){
-	ajSettings.data = {"authorID":1, "categoryID":1};
 	ajSettings.data.categoryID = $(this).attr("categoryID");
 	ajSettings.data.authorID = currentAuthor;
 	
@@ -71,10 +75,10 @@ $(".pageTab").click(function(e){
 })
 
 $( document ).ajaxComplete(function() {
-	blahblah();
+	loadText();
 });
 
-function blahblah() {
+function loadText() {
 	$(".b-load").empty();
 	$(".b-load").append(ajResp.responseText);
 	resetBook();
@@ -90,16 +94,20 @@ $(".journalSpine").click(function(e){
 	
 	if ($(this).attr("author") == 1) {
 		currentAuthor = 1;
+		ajSettings.data = {"authorID":1, "categoryID":1};
 		$(".btmLeft").removeClass("daveySelect");
 		$(".btmLeft").addClass("captainSelect");		
 		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_blue.png')");
 	} else if ($(this).attr("author") == 2) {
 		currentAuthor = 2;
+		ajSettings.data = {"authorID":2, "categoryID":1};
 		$(".btmLeft").removeClass("captainSelect");
 		$(".btmLeft").addClass("daveySelect");
 		
 		$(".pageTab").css("background-image", "url('./IMAGES/tabs/ribbon_red.png')");
-	}	
+	}
+
+	ajResp = $.ajax(ajSettings);	
 })
 
 
