@@ -57,7 +57,8 @@ $(".coverRight").click(function(e) {
 
 function showTabs() {
 	//Show the tabs
-	$(".btmRight").delay( 0 ).fadeIn( 400 );
+	//$(".btmRight").delay( 0 ).fadeIn( 400 );
+	$(".btmRight").fadeIn( 400 ).animate({top: "+=208", opacity:1}, 500, function() {});
 }
 
 function showBook() {
@@ -91,7 +92,7 @@ $(".pageTab").click(function(e) {
 	
 	$(".pageTab").removeClass("active");
 	$(this).toggleClass("active");
-})
+});
 
 
 
