@@ -7,6 +7,7 @@ ajSettings.data = {"authorID":1, "categoryID":1};
 
 var ajResp;
 var htmlData;
+var bookOpened;
 
 
 
@@ -14,6 +15,6 @@ var htmlData;
 $(document).ready(init);
 
 function init(){
-
+	bookOpened = false;
 }
 

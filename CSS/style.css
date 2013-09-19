@@ -6,13 +6,23 @@
 
 /*- Font Definitions -*/
 @font-face {
-  font-family: handwritten;
-  src: url("../FONTS/RujisHandwritingFont.otf") format("opentype");
+  font-family: "captainBody";
+  src: url("../FONTS/milk.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: antique;
-  src: url("../FONTS/ModernAntiqua.ttf") format("truetype");
+  font-family: "davyBody";
+  src: url("../FONTS/KGMullally.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "captainHeader";
+  src: url("../FONTS/Hoefler Text.ttc") format("truetype");
+}
+
+@font-face {
+  font-family: "davyHeader";
+  src: url("../FONTS/Hoefler Text.ttc") format("truetype");
 }
 
 
@@ -21,7 +31,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: handwritten;
 	font-size:18pt;
 	color:black;
 }
@@ -37,7 +46,6 @@ html, body
 
 H1
 {
-	font-family:antique;
 	font-size:1em;
 	color:black;
 	margin-top:1.5em;
@@ -46,7 +54,6 @@ H1
 
 H2
 {
-	font-family:antique;
 	font-size:1.5em;
 	color:black;
 	margin-bottom:0.25em;
@@ -110,6 +117,7 @@ P
 
 .coverLeft
 {
+	position:absolute;
 	display:inline-block;
 	background-image:url('../IMAGES/matt/CaptainCover.png');
 	background-repeat:no-repeat;
@@ -122,6 +130,8 @@ P
 
 .coverRight
 {
+	position:absolute;
+	left:640px;
 	display:inline-block;
 	background-image:url('../IMAGES/matt/DavyCover.png');
 	background-repeat:no-repeat;
@@ -130,6 +140,22 @@ P
 	height:100%;
 	float:right;
 	margin-right:0px;
+}
+
+.coverLeft.disabled {
+	pointer-events:none;
+}
+
+.coverRight.disabled {
+	pointer-events:none;
+}
+
+.davyCover {
+	background-image:url('../IMAGES/matt/DavyCover.png');
+}
+
+.capnCover {
+	background-image:url('../IMAGES/matt/CaptainCover.png');
 }
 
 .journalSpine
@@ -159,7 +185,7 @@ P
 	height:210px;
 	width:116px;
 	
-	margin-left:4px;
+	margin-left:0px;
 	margin-top:7px;
 	padding:00em;
 	
@@ -169,21 +195,27 @@ P
 	z-index:10;
 }
 
-.pageTabRedActive
-{
-	background-image:url('../IMAGES/tabs/ribbon_red_active.png');
-}
-
-.pageTabBlueActive
-{
-	background-image:url('../IMAGES/tabs/ribbon_blue_active.png');
-}
-
 .pageTab img
 {
 	margin-top:17px;
 }
 
+.davy{
+	background-image : url('../IMAGES/tabs/ribbon_red.png');
+}
+
+.captain{
+	background-image : url('../IMAGES/tabs/ribbon_blue.png');
+}
+
+.davy.active{
+	background-image:url('../IMAGES/tabs/ribbon_red_active.png');
+}
+
+
+.captain.active{
+	background-image:url('../IMAGES/tabs/ribbon_blue_active.png');
+}
 
 
 /* CSS for BookletJS */
@@ -198,6 +230,11 @@ P
 	background-image:url('../IMAGES/matt/BookOpenPreComp_Scaled.png');
 	z-index:0;
 	background-repeat:no-repeat;
+	font-family:"captainBody";
+}
+
+.book_wrapper.davyFont {
+	font-family:"davyBody";
 }
 
 .book_wrapper img
@@ -205,6 +242,7 @@ P
     margin:5px 0px 5px 5px;
     width:300px;
     padding:12px;
+	
 }
 
 .booklet
@@ -266,7 +304,6 @@ P
     background:transparent;
     opacity:0.8;
 	text-align:center;
-	font-family:antique;
 }
 
 a#next_page_button, a#prev_page_button
