@@ -1,6 +1,4 @@
 var $mybook			= $('#mybook');
-var $bttn_next		= $('#next_page_button');
-var $bttn_prev		= $('#prev_page_button');
 var $loading		= $('#loading');
 var $mybook_images	= $mybook.find('img');
 var cnt_images		= $mybook_images.length;
@@ -16,8 +14,6 @@ function bookSetup () {
 			++loaded;
 			if(loaded === cnt_images){
 				$loading.hide();
-				$bttn_next.show();
-				$bttn_prev.show();
 				$mybook.show().booklet({
 					name:               null,                            // name of the booklet to display in the document title bar
 					width:              1200,                             // container width
@@ -36,23 +32,23 @@ function bookSetup () {
 					closedBackChapter:  "End of Book",                            // used with "closed", "menu" and "chapterSelector", determines chapter name of blank ending page
 					covers:             false,                           // used with  "closed", makes first and last pages into covers, without page numbers (if enabled)
 					autoCenter:         false,
-					
+
 					pagePadding:        5,                              // padding for each page wrapper
 					pageNumbers:        false,                            // display page numbers on each page
-					
+
 					manual: 			false,
-					hovers:             true,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
+					hovers:             false,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
 					overlays:           false,                            // enables navigation using a page sized overlay, when enabled links inside the content will not be clickable
 					tabs:               false,                           // adds tabs along the top of the pages
 					tabWidth:           60,                              // set the width of the tabs
 					tabHeight:          20,                              // set the height of the tabs
-					arrows:             true,                           // adds arrows overlayed over the book edges
+					arrows:             false,                           // adds arrows overlayed over the book edges
 					cursor:             'pointer',                       // cursor css setting for side bar areas
 
 					hash:               false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
-					keyboard:           true,                            // enables navigation with arrow keys (left: previous, right: next)
-					next:               null,          			// selector for element to use as click trigger for next page
-					prev:               null,          			// selector for element to use as click trigger for previous page
+					keyboard:           false,                            // enables navigation with arrow keys (left: previous, right: next)
+					next:               null,							// selector for element to use as click trigger for next page
+					prev:               null,							// selector for element to use as click trigger for previous page
 
 					menu:               false,                            // selector for element to use as the menu area, required for 'pageSelector'
 					pageSelector:       false,                           // enables navigation with a dropdown menu of pages, requires 'menu'
@@ -95,16 +91,16 @@ function resetBook(){
 		pageNumbers:        false,                            // display page numbers on each page
 		
 		manual: 			false,
-		hovers:             true,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
+		hovers:             false,                            // enables preview pageturn hover animation, shows a small preview of previous or next page on hover
 		overlays:           false,                            // enables navigation using a page sized overlay, when enabled links inside the content will not be clickable
 		tabs:               false,                           // adds tabs along the top of the pages
 		tabWidth:           60,                              // set the width of the tabs
 		tabHeight:          20,                              // set the height of the tabs
-		arrows:             true,                           // adds arrows overlayed over the book edges
+		arrows:             false,                           // adds arrows overlayed over the book edges
 		cursor:             'pointer',                       // cursor css setting for side bar areas
 
 		hash:               false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
-		keyboard:           true,                            // enables navigation with arrow keys (left: previous, right: next)
+		keyboard:           false,                            // enables navigation with arrow keys (left: previous, right: next)
 		next:               null,							// selector for element to use as click trigger for next page
 		prev:               null,							// selector for element to use as click trigger for previous page
 

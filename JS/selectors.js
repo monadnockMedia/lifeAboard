@@ -1,3 +1,5 @@
+
+
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e) {
 	e.preventDefault();
@@ -94,6 +96,23 @@ $(".pageTab").click(function(e) {
 	$(this).toggleClass("active");
 });
 
+$(".next_page_button").click(function(e) {
+	e.preventDefault();
+	$('#mybook').booklet("next");
+});
+
+$(".prev_page_button").click(function(e) {
+	e.preventDefault();
+	$('#mybook').booklet("prev");
+});
+
+$("body").on( "click", ".translator", function() {
+	$(".translation").fadeOut( 125, function() {
+	    $(".translation").toggleClass("active");
+		$(".translation").fadeIn(125);
+	  });
+});
+
 
 
 /* Journal Spine chooses which book you are viewing */
@@ -114,6 +133,7 @@ $(".journalSpine").click(function(e) {
 		$(".coverRight").addClass("capnCover");
 		$(".coverLeft").removeClass("davyCover");
 		$(".coverRight").removeClass("davyCover");
+		$(".firstTab").addClass("active");
 	} else if ($(this).attr("author") == 2) {
 		currentAuthor = 2;
 		ajSettings.data = {"authorID":2, "categoryID":1};
@@ -126,6 +146,7 @@ $(".journalSpine").click(function(e) {
 		$(".coverRight").addClass("davyCover");
 		$(".coverLeft").removeClass("capnCover");
 		$(".coverRight").removeClass("capnCover");
+		$(".firstTab").addClass("active");
 	}
 
 	ajResp = $.ajax(ajSettings);	
@@ -140,3 +161,4 @@ function loadText() {
 	$(".b-load").append(ajResp.responseText);
 	resetBook();
 }
+
