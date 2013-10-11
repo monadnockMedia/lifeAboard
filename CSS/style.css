@@ -132,10 +132,10 @@ P.translation.active
 {
 	position:absolute;
 	box-sizing:border-box;
-	width:640px;
+	width:525px;
 	height:244px;
 	left:640px;
-	top:572px;
+	top:582px;
 	float:right;
 	z-index:8;
 }
@@ -223,10 +223,10 @@ P.translation.active
 	font-size:0.9em;
 	text-align:center;
 	
-	height:210px;
-	width:116px;
+	height:170px;
+	width:93px;
 	
-	margin-left:0px;
+	margin-left:12px;
 	margin-top:7px;
 	padding:00em;
 	
