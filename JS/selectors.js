@@ -2,6 +2,7 @@
 /* Bio Screen */
 $(".biography").click(function(e) {
 	$(this).fadeOut(500);
+	$(".selectSign").delay( 250 ).fadeIn( 500 );
 })
 
 
