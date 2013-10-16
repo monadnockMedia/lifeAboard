@@ -1,4 +1,9 @@
 
+/* Bio Screen */
+$(".biography").click(function(e) {
+	
+})
+
 
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e) {
