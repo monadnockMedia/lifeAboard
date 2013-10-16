@@ -1,7 +1,7 @@
 
 /* Bio Screen */
 $(".biography").click(function(e) {
-	
+	$(this).fadeOut(500);
 })
 
 

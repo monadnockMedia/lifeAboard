@@ -153,10 +153,6 @@ P.instructions {
 	z-index:150;
 }
 
-.biography:active {
-	background-image:url('../IMAGES/bios_large_active.png');
-}
-
 
 
 /* Selectors / Clickables / Navigation */
