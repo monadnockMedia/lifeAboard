@@ -42,6 +42,7 @@ html, body
 	background-color:black;
 	background-image:url('../IMAGES/matt/BackgroundWithLabel.png');
 	background-repeat:no-repeat;
+	overflow:hidden;
 }
 
 H1
@@ -49,7 +50,7 @@ H1
 	font-size:1em;
 	color:black;
 	margin-left:1.5em;
-	margin-top:1.5em;
+	margin-top:1.0em;
 }
 
 H2
@@ -101,11 +102,6 @@ P.translation.active
 	background-repeat:no-repeat;
 	background-image:url('../IMAGES/DramaticQuestionMark.png');
 	float:right;	
-}
-
-.translator:active
-{
-	background-image:url('../IMAGES/DramaticQuestionMark.png');	
 }
 
 #bottom

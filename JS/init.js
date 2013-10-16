@@ -13,6 +13,7 @@ var bookOpened;
 
 /* Runs after page loaded */
 $(document).ready(init);
+$.fx.interval = 35;
 
 function init(){
 	bookOpened = false;
