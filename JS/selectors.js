@@ -82,11 +82,15 @@ function showBook() {
 $(".pageTab").click(function(e) {
 	e.preventDefault();
 	
+	$(".next_page_button").fadeIn(250);
+	$(".prev_page_button").fadeOut(250);
+	
 	if (!bookOpened) {
 		bookOpened = true;
 		$(".pageTab").removeClass("active");
 		$(this).toggleClass("active");
 		showBook();
+		
 	}
 })
 
@@ -104,11 +108,15 @@ $(".pageTab").click(function(e) {
 
 $(".next_page_button").click(function(e) {
 	e.preventDefault();
+	$(this).fadeOut(250);
+	$(".prev_page_button").fadeIn(250);
 	$('#mybook').booklet("next");
 });
 
 $(".prev_page_button").click(function(e) {
 	e.preventDefault();
+	$(this).fadeOut(250);
+	$(".next_page_button").fadeIn(250);
 	$('#mybook').booklet("prev");
 });
 
@@ -126,10 +134,12 @@ $(".journalSpine").click(function(e) {
 	e.preventDefault();
 	
 	$(".b-load").empty();
+	$(".next_page_button").fadeIn(250);
+	$(".prev_page_button").fadeOut(250);
 	
 	if ($(this).attr("author") == 1) {
 		currentAuthor = 1;
-		ajSettings.data = {"authorID":1, "categoryID":1};
+		ajSettings.data = {"authorID":1, "categoryID":5};
 		$(".btmLeft").removeClass("daveySelect");
 		$(".btmLeft").addClass("captainSelect");
 		$(".pageTab").removeClass("davy active");	
@@ -142,7 +152,7 @@ $(".journalSpine").click(function(e) {
 		$(".firstTab").addClass("active");
 	} else if ($(this).attr("author") == 2) {
 		currentAuthor = 2;
-		ajSettings.data = {"authorID":2, "categoryID":1};
+		ajSettings.data = {"authorID":2, "categoryID":5};
 		$(".btmLeft").removeClass("captainSelect");
 		$(".btmLeft").addClass("daveySelect");
 		$(".pageTab").removeClass("captain active");
