@@ -10,6 +10,7 @@ $(".biography").click(function(e) {
 $(".coverLeft").click(function(e) {
 	e.preventDefault();
 	
+	$(document.body).toggleClass("DavyBG");
 	$(this).addClass("disabled");
 	currentAuthor = 1;
 	
@@ -150,6 +151,7 @@ $(".journalSpine").click(function(e) {
 		$(".coverLeft").removeClass("davyCover");
 		$(".coverRight").removeClass("davyCover");
 		$(".firstTab").addClass("active");
+		$(document.body).removeClass("DavyBG");
 	} else if ($(this).attr("author") == 2) {
 		currentAuthor = 2;
 		ajSettings.data = {"authorID":2, "categoryID":5};
@@ -163,6 +165,7 @@ $(".journalSpine").click(function(e) {
 		$(".coverLeft").removeClass("capnCover");
 		$(".coverRight").removeClass("capnCover");
 		$(".firstTab").addClass("active");
+		$(document.body).addClass("DavyBG");
 	}
 
 	ajResp = $.ajax(ajSettings);	

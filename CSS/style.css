@@ -40,9 +40,13 @@ html, body
 	width: 1280px;
 	height: 1024px;
 	background-color:black;
-	background-image:url('../IMAGES/matt/BackgroundWithLabel.png');
+	background-image:url('../IMAGES/matt/BackgroundSmith.png');
 	background-repeat:no-repeat;
 	overflow:hidden;
+}
+
+body.DavyBG {
+	background-image:url('../IMAGES/matt/BackgroundDavy.png');
 }
 
 H1
