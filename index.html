@@ -12,9 +12,16 @@
 		<link href="jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
 		<link rel="stylesheet" href="CSS/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script src="init.js"></script>
+		<script language="JavaScript" type="text/javascript"> 
+		function setDisplayState() { 
+		    window.nativeWindow.stage.displayState = 
+		        runtime.flash.display.StageDisplayState.FULL_SCREEN_INTERACTIVE; 
+		}
+		</script>
 	</head>
  	
-	<body class="DavyBG">
+	<body class="DavyBG" onload="setDisplayState();">
+		
 		
 		<div class="coverLeft"></div>
 		<div class="coverRight"></div>
