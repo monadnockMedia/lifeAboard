@@ -1,6 +1,18 @@
+//Reset Tmer
+var timer = setInterval(restart, 120000);
+
+function restart() {
+	document.location.href='';
+}
+
+function nudge() {
+	clearInterval(timer);
+	timer = setInterval(restart, 120000);
+}
 
 /* Bio Screen */
 $(".biography").click(function(e) {
+	nudge();
 	$(this).fadeOut(500);
 	$(".selectSign").delay( 250 ).fadeIn( 500 );
 })
@@ -8,6 +20,7 @@ $(".biography").click(function(e) {
 
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e) {
+	nudge();
 	e.preventDefault();
 	
 	$(document.body).toggleClass("DavyBG");
@@ -36,6 +49,7 @@ $(".coverLeft").click(function(e) {
 })
 
 $(".coverRight").click(function(e) {
+	nudge();
 	e.preventDefault();
 	
 	$(this).addClass("disabled");
@@ -81,6 +95,7 @@ function showBook() {
 
 /* Page Tabs that load journal entries at bottom right */
 $(".pageTab").click(function(e) {
+	nudge();
 	e.preventDefault();
 	
 	$(".next_page_button").fadeIn(250);
@@ -96,6 +111,7 @@ $(".pageTab").click(function(e) {
 })
 
 $(".pageTab").click(function(e) {
+	nudge();
 	ajSettings.data.categoryID = $(this).attr("categoryID");
 	ajSettings.data.authorID = currentAuthor;
 	
@@ -108,6 +124,7 @@ $(".pageTab").click(function(e) {
 });
 
 $(".next_page_button").click(function(e) {
+	nudge();
 	e.preventDefault();
 	$(this).fadeOut(250);
 	$(".prev_page_button").fadeIn(250);
@@ -115,6 +132,7 @@ $(".next_page_button").click(function(e) {
 });
 
 $(".prev_page_button").click(function(e) {
+	nudge();
 	e.preventDefault();
 	$(this).fadeOut(250);
 	$(".next_page_button").fadeIn(250);
@@ -122,6 +140,7 @@ $(".prev_page_button").click(function(e) {
 });
 
 $("body").on( "click", ".translator", function() {
+	nudge();
 	$(".translation").fadeOut( 125, function() {
 	    $(".translation").toggleClass("active");
 		$(".translation").fadeIn(125);
@@ -132,6 +151,7 @@ $("body").on( "click", ".translator", function() {
 
 /* Journal Spine chooses which book you are viewing */
 $(".journalSpine").click(function(e) {
+	nudge();
 	e.preventDefault();
 	
 	$(".b-load").empty();
