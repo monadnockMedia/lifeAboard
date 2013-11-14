@@ -1,0 +1,486 @@
+
+
+/*- Style Sheet for Life Aboard -*/
+
+
+
+/*- Font Definitions -*/
+@font-face {
+  font-family: "captainBody";
+  src: url("../FONTS/milk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "davyBody";
+  src: url("../FONTS/KGMullally.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "captainHeader";
+  src: url("../FONTS/Hoefler Text.ttc") format("truetype");
+}
+
+@font-face {
+  font-family: "davyHeader";
+  src: url("../FONTS/Hoefler Text.ttc") format("truetype");
+}
+
+
+
+/*- Overall Page Formatting -*/
+* {
+	margin: 0;
+	padding: 0;
+	font-size:18pt;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+*.adaEnabled {
+	background-color:black;
+	color:white;
+	font-family:helvetica;
+	background-image:transparent;
+}
+
+html, body
+{
+	width: 1280px;
+	height: 1024px;
+	background-color:black;
+	background-image:url('../IMAGES/matt/BackgroundCaptain_New.png');
+	background-repeat:no-repeat;
+	overflow:hidden;
+}
+
+body.DavyBG {
+	background-image:url('../IMAGES/matt/BackgroundDavy_New.png');
+}
+
+.ada {
+	position:absolute;
+	top:940px;
+	left:1200px;
+	z-index:500;
+	width:63px;
+	height:67px;
+	background-image:url('../IMAGES/Handicap.png');
+}
+
+.ada:active {
+	background-image:url('../IMAGES/Handicap_Touched.png');
+}
+
+H1
+{
+	font-size:1em;
+	margin-left:1.5em;
+	margin-top:1.0em;
+	text-shadow: 0px 0px 2px #8C5200;
+}
+
+H2
+{
+	font-size:1.5em;
+	color:black;
+	text-shadow: 0px 0px 2px #8C5200;
+}
+
+P
+{
+	text-shadow: 0px 0px 2px #8C5200;
+	line-height:1.05em;
+	margin-left:1.7em;
+	margin-right:1.7em;
+}
+
+P.adaEnabled {
+	font-size:17pt;
+}
+
+P.list
+{
+	text-shadow: 0px 0px 2px #8C5200;
+	line-height:1.2em;
+	margin-left:1.7em;
+	margin-right:1.7em;
+	font-size:16pt;
+}
+
+P.translation
+{
+	width:405px;
+	height:468px;
+	font-size: 13pt;
+	background-repeat:no-repeat;
+	background-image:url('../IMAGES/translation_opaque.png');
+	margin-left:150px;
+}
+
+P.right
+{
+	text-align:right;
+	padding-right:130px;
+}
+
+P.translation.active
+{
+	background-image:url('../IMAGES/translation.png');
+}
+
+P.instructions {
+	font-family:"davyHeader";
+}
+
+.translator
+{
+	background-repeat:no-repeat;
+	background-image:url('../IMAGES/DramaticQuestionMark.png');
+	float:right;	
+}
+
+#bottom
+{
+	box-sizing:border-box;
+	display:inline-box;
+	width:1280px;
+	height:204px;
+}
+
+.btmLeft
+{
+	position:absolute;
+	box-sizing:border-box;
+	width:660px;
+	height:100%;
+	left:0px;
+	top:822px;
+	float:left;
+	background-repeat:no-repeat;
+}
+
+.btmRight
+{
+	position:absolute;
+	box-sizing:border-box;
+	width:525px;
+	height:244px;
+	left:640px;
+	top:582px;
+	float:right;
+	z-index:8;
+}
+
+.biography {
+	background-image:url('../IMAGES/bios_large.png');
+	background-repeat:no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	width:1280px;
+	height:1024px;
+	z-index:150;
+}
+
+
+
+/* Selectors / Clickables / Navigation */
+.selectSign
+{
+	display:block;
+	position:absolute;
+	top:873px;
+	left: 320px;
+	z-index:11;
+}
+
+.coverLeft
+{
+	position:absolute;
+	display:inline-block;
+	background-image:url('../IMAGES/matt/CaptainCover.png');
+	background-repeat:no-repeat;
+	z-index:11;
+	width:650px;
+	height:100%;
+	float:left;
+	margin-right:-100px;
+}
+
+.coverRight
+{
+	position:absolute;
+	left:640px;
+	display:inline-block;
+	background-image:url('../IMAGES/matt/DavyCover.png');
+	background-repeat:no-repeat;
+	z-index:11;
+	width:640px;
+	height:100%;
+	float:right;
+	margin-right:0px;
+}
+
+.coverLeft.disabled
+{
+	pointer-events:none;
+}
+
+.coverRight.disabled
+{
+	pointer-events:none;
+}
+
+.davyCover
+{
+	background-image:url('../IMAGES/matt/DavyCover.png');
+}
+
+.capnCover
+{
+	background-image:url('../IMAGES/matt/CaptainCover.png');
+}
+
+.journalSpine
+{
+	width:95%;
+	height: 95px;
+}
+
+.captainSelect
+{
+	background-image:url('../IMAGES/matt/BookSpines_03.png');
+}
+
+.daveySelect
+{
+	background-image:url('../IMAGES/matt/BookSpines_02.png');
+}
+
+.pageTab
+{
+	/*border:3px aqua dotted;*/
+	background-color:transparent;
+	color:#BA5400;
+	font-size:0.9em;
+	text-align:center;
+	
+	height:170px;
+	width:93px;
+	
+	margin-left:12px;
+	margin-top:7px;
+	padding:00em;
+	
+	float:left;
+	background-image:url('../IMAGES/tabs/ribbon_blue.png');
+	background-repeat:no-repeat;
+	z-index:9;
+}
+
+.pageTab img
+{
+	margin-top:17px;
+}
+
+.firstTab{}
+
+.davy
+{
+	background-image : url('../IMAGES/tabs/ribbon_red.png');
+}
+
+.captain
+{
+	background-image : url('../IMAGES/tabs/ribbon_blue.png');
+}
+
+.davy.active
+{
+	background-image:url('../IMAGES/tabs/ribbon_red_active.png');
+}
+
+
+.captain.active
+{
+	background-image:url('../IMAGES/tabs/ribbon_blue_active.png');
+}
+
+
+/* CSS for BookletJS */
+.book_wrapper
+{
+    margin:0 auto;
+    padding-top:40px;
+    width:1280px;
+    height:900px;
+    position:relative;
+	background-color: transparent;
+	background-image:url('../IMAGES/matt/BookOpenPreComp_Scaled.png');
+	z-index:0;
+	background-repeat:no-repeat;
+	font-family:"captainBody";
+}
+
+.book_wrapper.davyFont
+{
+	font-family:"davyBody";
+}
+
+.book_wrapper img
+{
+    margin:0px 0px 0px 0px;
+    padding:0px;
+	
+}
+
+.imgFloatLeft
+{
+	float:left;
+}
+
+.imgFloatRight
+{
+	float:right;
+}
+
+.booklet
+{
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+	z-index:0;
+}
+
+.booklet.adaEnabled {
+	
+}
+
+.booklet .b-wrap-left
+{
+	-webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft:10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background:url('../IMAGES/matt/page_bg_left.png') no-repeat;
+	z-index:0;
+}
+
+.booklet .b-wrap-right
+{
+	-webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background:url('../IMAGES/matt/page_bg_right.png') no-repeat;
+	z-index:0;
+}
+
+.b-wrap-right.adaEnabled {
+	background:black;
+}
+
+.b-wrap-left.adaEnabled {
+	background:black;
+}
+
+.booklet .b-counter
+{
+    bottom:10px;
+    position:absolute;
+    display:block;
+    width:90%;
+    height:20px;
+    color:#222;
+    text-align:center;
+    font-size:1em;
+    padding:5px 0 0;
+    background:transparent;
+    opacity:0.8;
+	text-align:center;
+}
+
+.prev_page_button
+{
+	background-image:url('../IMAGES/corner_left_hand.png');
+	background-repeat:no-repeat;
+	left:25px;
+	top:752px;
+	z-index:12;
+    position:absolute;
+    width:82px;
+    height:79px;
+    cursor:pointer;
+}
+
+.prev_page_button.ADAButton {
+	background-image:url('../IMAGES/corner_left_hand_ADA.png');
+}
+
+.next_page_button
+{
+	background-image:url('../IMAGES/corner_right_hand.png');
+	background-repeat:no-repeat;
+	left:1155px;
+	top:750px;
+	z-index:12;
+    position:absolute;
+    width:82px;
+    height:79px;
+    cursor:pointer;
+}
+
+.next_page_button.ADAButton {
+	background-image:url('../IMAGES/corner_right_hand_ADA.png');
+}
+
+.next_page_button:active
+{
+	background-image:url('../IMAGES/corner_right_touched_hand.png');
+}
+
+.next_page_button.ADAButton:active
+{
+	background-image:url('../IMAGES/corner_right_touched_hand_ADA.png');
+}
+
+.prev_page_button:active
+{
+	background-image:url('../IMAGES/corner_left_touched_hand.png');
+}
+
+.prev_page_button.ADAButton:active
+{
+	background-image:url('../IMAGES/corner_left_touched_hand_ADA.png');
+}
+
+.loading
+{
+    width:160px;
+    height:56px;
+    position: absolute;
+    top:50%;
+    margin-top:-28px;
+    right:135px;
+    line-height:56px;
+    color:#fff;
+    padding-left:60px;
+    font-size:15px;
+    background: #000 url('../IMAGES/ajax-loader.gif') no-repeat 10px 50%;
+    opacity: 0.7;
+    z-index:9999;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+}
+
+.hidden
+{
+	display:none;
+}
