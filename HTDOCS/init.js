@@ -1,7 +1,7 @@
 var ajSettings = $.ajaxSettings;
 var currentAuthor = 1;
 
-ajSettings.url = "http://0.0.0.0:8080/lifeAboard/";
+ajSettings.url = "http://server.local:8080/lifeAboard/";
 ajSettings.data = {"authorID":1, "categoryID":1};
 
 
