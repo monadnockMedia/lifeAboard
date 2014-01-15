@@ -10,6 +10,11 @@ var htmlData;
 var bookOpened;
 var onPageTwo;
 
+var pageturnTI = Ti.Media.createSound('SOUND/pageturn.wav');
+var tabTI = Ti.Media.createSound('SOUND/pageturn.wav');
+var book_closeTI = Ti.Media.createSound('SOUND/adasnd.wav');
+var book_slideTI = Ti.Media.createSound('SOUND/book_slide3.wav');
+var ada_sndTI = Ti.Media.createSound('SOUND/adasnd.wav');
 
 
 /* Runs after page loaded */

@@ -1,5 +1,7 @@
 //Reset Tmer
 var timer;
+var selectTimer = setInterval(selectSignIdle, 10000);
+var selectOnScreen = false;
 var ADAEnabled = false;
 
 $(document.body).click(function(e) {
@@ -40,9 +42,73 @@ function userStarted() {
 	timer = setInterval(promptIdleUser, 120000); // 30000
 }
 
+function selectSignIdle() {
+	switch (selectOnScreen) {
+		case true:  $(".selectSign").animate({top: "+=360", opacity:1}, 1000, "linear", function() {});
+					selectOnScreen = false;
+					break;
+		case false: $(".selectSign").animate({top: "-=360", opacity:1}, 1000, "linear", function() {pulse();});
+					selectOnScreen = true;
+					break;
+	}
+}
+
+//pulse();
+function pulse() {
+	console.log("pulse");
+ $(".selectSign img").delay(200).animate({
+    height: '410px',
+	width: '675px',
+  }, 2250, function() {
+    // First animate complete
+    $(".selectSign img").animate({
+      height: '385px',
+	  width: '650px',
+      }, 2250, function() {
+		 $(".selectSign img").animate({
+		    height: '410px',
+			width: '675px',
+		  }, 2250, function() {
+		    // First animate complete
+		    $(".selectSign img").animate({
+		      height: '385px',
+			  width: '650px',
+		      }, 2250, function() {
+		        // Second animate complete
+		    });
+		  });    });
+  });
+
+ $(".selectSign").delay(200).animate({
+	left: '-=13',
+	top: '-=13'
+  }, 2250, function() {
+    // First animate complete
+    $(".selectSign").animate({
+		left: '+=13',
+		top: '+=13'
+      }, 2250, function() {
+		 $(".selectSign").animate({
+			left: '-=13',
+			top: '-=13'
+		  }, 2250, function() {
+		    // First animate complete
+		    $(".selectSign").animate({
+				left: '+=13',
+				top: '+=13'
+		      }, 2250, function() {
+		        // Second animate complete
+		    });
+		  });    });
+  });
+}
+
+
+
 $(".ada").click(function(e) {
 	ada_snd.play();
-	
+	ada_sndTI.play();
+		
 	if (!ADAEnabled) {
 		ADAEnabled = true;
 		$("p").addClass("adaEnabled");
@@ -60,16 +126,12 @@ $(".ada").click(function(e) {
 	}
 })
 
-/* Bio Screen */
-$(".biography").click(function(e) {
-	$(this).fadeOut(500);
-	$(".selectSign").delay( 250 ).fadeIn( 500 );
-})
-
 
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e) {
 	book_slide.play();
+	book_slideTI.play();
+	clearInterval(selectTimer);
 	e.preventDefault();
 	
 	$(document.body).toggleClass("DavyBG");
@@ -79,7 +141,7 @@ $(".coverLeft").click(function(e) {
 	
 	//Hide unclicked book, selection sign
 	$(".coverRight").fadeOut( 500 );
-	$(".selectSign").delay( 250 ).animate({top: "+=160", opacity:0}, 500, function() {});
+	$(".selectSign").delay( 100 ).animate({opacity:0}, 500, function() {});
 	
 	//Set correct bookspine highlight
 	$(".btmLeft").removeClass("daveySelect");
@@ -100,6 +162,8 @@ $(".coverLeft").click(function(e) {
 
 $(".coverRight").click(function(e) {
 	book_slide.play();
+	book_slideTI.play();
+	clearInterval(selectTimer);
 	e.preventDefault();
 	
 	$(this).addClass("disabled");
@@ -110,8 +174,8 @@ $(".coverRight").click(function(e) {
 	
 	//Hide unclicked book, selection sign	
 	$(".coverLeft").fadeOut( 500 );
-	$(".selectSign").delay( 250 ).animate({top: "+=160", opacity:0}, 500, function() {});
-	
+	$(".selectSign").delay( 100 ).animate({opacity:0}, 500, function() {});
+		
 	//Set correct bookspine highlight
 	$(".btmLeft").removeClass("captainSelect");
 	$(".btmLeft").addClass("daveySelect");
@@ -163,6 +227,7 @@ function hideBook(author) {
 /* Page Tabs that load journal entries at bottom right */
 $(".pageTab").click(function(e) {
 	tab.play();
+	tabTI.play();
 	e.preventDefault();
 	
 	$(".next_page_button").fadeIn(250);
@@ -190,6 +255,7 @@ $(".pageTab").click(function(e) {
 
 $(".next_page_button").click(function(e) {
 	pageturn.play();
+	pageturnTI.play();
 	e.preventDefault();
 	$(this).fadeOut(250);
 	$(".prev_page_button").fadeIn(250);
@@ -216,6 +282,7 @@ $("body").on( "click", ".translator", function() {
 /* Journal Spine chooses which book you are viewing */
 $(".journalSpine").click(function(e) {
 	book_close.play();
+	book_closeTI.play();
 	e.preventDefault();
 	
 	

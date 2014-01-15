@@ -147,6 +147,7 @@ P.instructions {
 	display:inline-box;
 	width:1280px;
 	height:204px;
+	overflow:hidden;
 }
 
 .btmLeft
@@ -191,7 +192,8 @@ P.instructions {
 {
 	display:block;
 	position:absolute;
-	top:873px;
+	pointer-events:none;
+	top:915px;
 	left: 320px;
 	z-index:11;
 }
