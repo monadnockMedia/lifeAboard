@@ -1,6 +1,6 @@
 //Reset Tmer
 var timer;
-var selectTimer = setInterval(selectSignIdle, 10000);
+var selectTimer = setInterval(selectSignIdle, 6500);
 var selectOnScreen = false;
 var ADAEnabled = false;
 
@@ -44,63 +44,27 @@ function userStarted() {
 
 function selectSignIdle() {
 	switch (selectOnScreen) {
-		case true:  $(".selectSign").animate({top: "+=360", opacity:1}, 1000, "linear", function() {});
+		case true:  $(".selectSign").toggleClass('lit');
+					//$("#overlay").toggleClass('lit');
+					$("#overlay").animate({opacity:0}, 1000, "swing", function() {
+						
+					});
+					$(".selectSign").animate({top: "+=360", opacity:1}, 1000, "swing", function() {
+						
+					});
 					selectOnScreen = false;
 					break;
-		case false: $(".selectSign").animate({top: "-=360", opacity:1}, 1000, "linear", function() {pulse();});
+		case false: $("#overlay").animate({opacity:1}, 1000, "swing", function() {
+						
+					});
+					$(".selectSign").animate({top: "-=360", opacity:1}, 1000, "swing", function() {
+						$(".selectSign").toggleClass('lit');
+						//$("#overlay").toggleClass('lit');
+					});
+					
 					selectOnScreen = true;
 					break;
 	}
-}
-
-//pulse();
-function pulse() {
-	console.log("pulse");
- $(".selectSign img").delay(200).animate({
-    height: '410px',
-	width: '675px',
-  }, 2250, function() {
-    // First animate complete
-    $(".selectSign img").animate({
-      height: '385px',
-	  width: '650px',
-      }, 2250, function() {
-		 $(".selectSign img").animate({
-		    height: '410px',
-			width: '675px',
-		  }, 2250, function() {
-		    // First animate complete
-		    $(".selectSign img").animate({
-		      height: '385px',
-			  width: '650px',
-		      }, 2250, function() {
-		        // Second animate complete
-		    });
-		  });    });
-  });
-
- $(".selectSign").delay(200).animate({
-	left: '-=13',
-	top: '-=13'
-  }, 2250, function() {
-    // First animate complete
-    $(".selectSign").animate({
-		left: '+=13',
-		top: '+=13'
-      }, 2250, function() {
-		 $(".selectSign").animate({
-			left: '-=13',
-			top: '-=13'
-		  }, 2250, function() {
-		    // First animate complete
-		    $(".selectSign").animate({
-				left: '+=13',
-				top: '+=13'
-		      }, 2250, function() {
-		        // Second animate complete
-		    });
-		  });    });
-  });
 }
 
 
@@ -142,6 +106,7 @@ $(".coverLeft").click(function(e) {
 	//Hide unclicked book, selection sign
 	$(".coverRight").fadeOut( 500 );
 	$(".selectSign").delay( 100 ).animate({opacity:0}, 500, function() {});
+	$("#overlay").delay( 100 ).animate({opacity:0}, 500, function() {});
 	
 	//Set correct bookspine highlight
 	$(".btmLeft").removeClass("daveySelect");

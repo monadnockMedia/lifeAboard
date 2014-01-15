@@ -19,7 +19,7 @@ var ada_sndTI = Ti.Media.createSound('SOUND/adasnd.wav');
 
 /* Runs after page loaded */
 $(document).ready(init);
-$.fx.interval = 35;
+//$.fx.interval = 5;
 
 function init(){
 	air.Mouse.hide();

@@ -190,13 +190,39 @@ P.instructions {
 /* Selectors / Clickables / Navigation */
 .selectSign
 {
+	width:650px;
+	height:385px;
 	display:block;
 	position:absolute;
 	pointer-events:none;
 	top:915px;
 	left: 320px;
 	z-index:11;
+	background-image:url('../IMAGES/matt/SelectALabel2.jpg');
+	background-repeat:no-repeat;
+	z-index:31;
 }
+
+.selectSign.lit {
+	background-image:url('../IMAGES/matt/SelectALabel2_lit.jpg');
+}
+
+#overlay {
+	position:absolute;
+	width:1280px;
+	height:1024px;
+	background-image:url('../IMAGES/matt/overlay.png');
+	background-repeat:no-repeat;
+	pointer-events:none;
+	z-index:30;
+	opacity:0;
+}
+
+#overlay.lit {
+	opacity:1;
+}
+
+
 
 .coverLeft
 {
