@@ -25,6 +25,10 @@
   src: url("../FONTS/Hoefler Text.ttc") format("truetype");
 }
 
+.symbolFix {
+	font-family:"davyBody";
+}
+
 
 
 /*- Overall Page Formatting -*/
@@ -511,4 +515,8 @@ P.instructions {
 .hidden
 {
 	display:none;
+}
+
+.entry {
+	overflow:visible;
 }

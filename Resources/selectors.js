@@ -140,6 +140,7 @@ $(".coverRight").click(function(e) {
 	//Hide unclicked book, selection sign	
 	$(".coverLeft").fadeOut( 500 );
 	$(".selectSign").delay( 100 ).animate({opacity:0}, 500, function() {});
+	$("#overlay").delay( 100 ).animate({opacity:0}, 500, function() {});
 		
 	//Set correct bookspine highlight
 	$(".btmLeft").removeClass("captainSelect");
