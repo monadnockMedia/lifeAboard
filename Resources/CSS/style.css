@@ -33,9 +33,9 @@
 
 /*- Overall Page Formatting -*/
 * {
-	margin: 0;
-	padding: 0;
-	font-size:18pt;
+  margin: 0;
+  padding: 0;
+  font-size:18pt;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
@@ -47,6 +47,10 @@
 	color:white;
 	font-family:helvetica;
 	background-image:transparent;
+}
+
+#codekey.adaEnabled {
+	
 }
 
 html, body
@@ -134,8 +138,14 @@ P.translation.active
 	background-image:url('../IMAGES/translation.png');
 }
 
+P.translation.active.adaEnabled
+{
+	background-image:url('../IMAGES/translation_ada.png');
+}
+
 P.instructions {
 	font-family:"davyHeader";
+	text-shadow: none;
 }
 
 .translator
@@ -420,6 +430,14 @@ P.instructions {
 
 .b-wrap-left.adaEnabled {
 	background:black;
+}
+
+.b-wrap-right.adaEnabled img {
+	background:transparent;
+}
+
+.b-wrap-left.adaEnabled img {
+	background:transparent;
 }
 
 .booklet .b-counter

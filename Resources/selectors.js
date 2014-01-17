@@ -75,6 +75,8 @@ $(".ada").click(function(e) {
 		
 	if (!ADAEnabled) {
 		ADAEnabled = true;
+		$("#codekey").attr("src","../IMAGES/ben/codekey_ada.png");
+		$("img").addClass("adaEnabled");
 		$("p").addClass("adaEnabled");
 		$("h1").addClass("adaEnabled");
 		$(".page").addClass("adaEnabled");
@@ -87,6 +89,7 @@ $(".ada").click(function(e) {
 		$(".adaEnabled").removeClass("adaEnabled");
 		$(".next_page_button").removeClass("ADAButton");
 		$(".prev_page_button").removeClass("ADAButton");
+		$("#codekey").attr("src","../IMAGES/ben/codekey.png");
 	}
 })
 
@@ -293,7 +296,7 @@ function loadText() {
 	resetBook();
 	
 	if (ADAEnabled) {
-		
+		$("img").addClass("adaEnabled");
 		$("p").addClass("adaEnabled");
 		$("h1").addClass("adaEnabled");
 		$(".page").addClass("adaEnabled");
