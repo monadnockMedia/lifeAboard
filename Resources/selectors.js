@@ -70,7 +70,6 @@ function selectSignIdle() {
 
 
 $(".ada").click(function(e) {
-	ada_snd.play();
 	ada_sndTI.play();
 		
 	if (!ADAEnabled) {
@@ -98,7 +97,7 @@ $(".ada").click(function(e) {
 
 /* Select your initial book by cover */
 $(".coverLeft").click(function(e) {
-	book_slide.play();
+	
 	book_slideTI.play();
 	clearInterval(selectTimer);
 	e.preventDefault();
@@ -131,7 +130,7 @@ $(".coverLeft").click(function(e) {
 })
 
 $(".coverRight").click(function(e) {
-	book_slide.play();
+	
 	book_slideTI.play();
 	clearInterval(selectTimer);
 	e.preventDefault();
@@ -197,7 +196,6 @@ function hideBook(author) {
 
 /* Page Tabs that load journal entries at bottom right */
 $(".pageTab").click(function(e) {
-	tab.play();
 	tabTI.play();
 	e.preventDefault();
 	
@@ -225,7 +223,6 @@ $(".pageTab").click(function(e) {
 });
 
 $(".next_page_button").click(function(e) {
-	pageturn.play();
 	pageturnTI.play();
 	e.preventDefault();
 	$(this).fadeOut(250);
@@ -234,7 +231,6 @@ $(".next_page_button").click(function(e) {
 });
 
 $(".prev_page_button").click(function(e) {
-	pageturn.play();
 	e.preventDefault();
 	$(this).fadeOut(250);
 	$(".next_page_button").fadeIn(250);
@@ -252,7 +248,6 @@ $("body").on( "click", ".translator", function() {
 
 /* Journal Spine chooses which book you are viewing */
 $(".journalSpine").click(function(e) {
-	book_close.play();
 	book_closeTI.play();
 	e.preventDefault();
 	
