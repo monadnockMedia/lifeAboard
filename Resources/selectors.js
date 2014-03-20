@@ -74,8 +74,8 @@ $(".ada").click(function(e) {
 		
 	if (!ADAEnabled) {
 		ADAEnabled = true;
-		$("#codekey").attr("src","../IMAGES/ben/codekey_ada.png");
-		$(".translator").attr("src","../IMAGES/DramaticQuestionMark_ada.png");
+		$("#codekey").attr("src","IMAGES/ben/codekey_ada.png");
+		$(".translator").attr("src","IMAGES/DramaticQuestionMark_ada.png");
 		$("img").addClass("adaEnabled");
 		$("p").addClass("adaEnabled");
 		$("h1").addClass("adaEnabled");
@@ -89,8 +89,8 @@ $(".ada").click(function(e) {
 		$(".adaEnabled").removeClass("adaEnabled");
 		$(".next_page_button").removeClass("ADAButton");
 		$(".prev_page_button").removeClass("ADAButton");
-		$("#codekey").attr("src","../IMAGES/ben/codekey.png");
-		$(".translator").attr("src","../IMAGES/DramaticQuestionMark.png");
+		$("#codekey").attr("src","IMAGES/ben/codekey.png");
+		$(".translator").attr("src","IMAGES/DramaticQuestionMark.png");
 	}
 })
 

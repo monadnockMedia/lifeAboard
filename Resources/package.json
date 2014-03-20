@@ -1,0 +1,19 @@
+{
+  "main": "index.html",
+  "name": "life_aboard",
+  "description": "NGLApp",
+  "version": "0.1.0",
+  "keywords": [ "monadnock", "node-webkit" ],
+  "window": {
+    "title": "Life Aboard",
+    "toolbar": false,
+    "frame": false,
+	"kiosk": true,
+    "width": 1280,
+    "height": 1024
+  },
+  "webkit": {
+    "plugin": true,
+	"java": true
+  }
+}

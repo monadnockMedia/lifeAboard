@@ -10,11 +10,11 @@ var htmlData;
 var bookOpened;
 var onPageTwo;
 
-var pageturnTI = Ti.Media.createSound('SOUND/pageturn.wav');
-var tabTI = Ti.Media.createSound('SOUND/pageturn.wav');
-var book_closeTI = Ti.Media.createSound('SOUND/adasnd.wav');
-var book_slideTI = Ti.Media.createSound('SOUND/book_slide3.wav');
-var ada_sndTI = Ti.Media.createSound('SOUND/adasnd.wav');
+var pageturnTI = new Audio("SOUND/pageturn.wav");
+var tabTI = new Audio('SOUND/pageturn.wav');
+var book_closeTI = new Audio('SOUND/adasnd.wav');
+var book_slideTI = new Audio('SOUND/book_slide3.wav');
+var ada_sndTI = new Audio('SOUND/adasnd.wav');
 
 
 /* Runs after page loaded */
@@ -22,8 +22,6 @@ $(document).ready(init);
 //$.fx.interval = 5;
 
 function init(){
-	air.Mouse.hide();
-	
 	bookOpened = false;
 	onPageTwo = false;
 }
