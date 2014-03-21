@@ -1,7 +1,7 @@
 var ajSettings = $.ajaxSettings;
 var currentAuthor = 1;
 
-ajSettings.url = "http://monadnock.or.gs:8080/lifeAboard/";
+ajSettings.url = "http://192.168.1.103:8080/lifeAboard/";
 ajSettings.data = {"authorID":1, "categoryID":1};
 
 

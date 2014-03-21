@@ -1,7 +1,7 @@
 var ajSettings = $.ajaxSettings;
 var currentAuthor = 1;
 
-ajSettings.url = "http://server.local:8080/lifeAboard/";
+ajSettings.url = "http://192.168.1.103:8080/lifeAboard/";
 ajSettings.data = {"authorID":1, "categoryID":1};
 
 
@@ -14,7 +14,7 @@ var onPageTwo;
 
 /* Runs after page loaded */
 $(document).ready(init);
-$.fx.interval = 35;
+//$.fx.interval = 35;
 
 function init(){
 	bookOpened = false;
