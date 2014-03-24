@@ -320,7 +320,7 @@ var nwKiosk = function(){
 		kioskMode = !kioskMode;
 		  break;
 		case 109:
-		  (mouseHidden) ? $("body").css("cursor","none") : $("body").css("cursor","pointer") ;
+		  (mouseHidden) ? $("*").css("cursor","none") : $("*").css("cursor","pointer") ;
 		mouseHidden=!mouseHidden;
 		  break;
 	
@@ -329,16 +329,23 @@ var nwKiosk = function(){
 
 	})}
 	this.hideMouse = function(){
-		$("body").css("cursor","none")
+		$("*").css("cursor","none")
 	}
 	this.showMouse = function(){
-		$("body").css("cursor","pointer")
+		$("*").css("cursor","pointer")
 	}
+	this.win = win;
 	
 }
-nwK = new nwKiosk();
-nwK.hideMouse();
-nwK.setup();
+$(function(){
+	
+	nwK = new nwKiosk();
+	
+	nwK.setup();
+	nwK.hideMouse();
+	nwK.win.enterKioskMode();	
+})
+
 
 
 

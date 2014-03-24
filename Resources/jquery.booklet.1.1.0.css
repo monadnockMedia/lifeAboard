@@ -80,7 +80,7 @@
 ----------------------------------------*/
 	.b-menu {height:40px; padding:0 0 10px;}
 	
-	.b-selector             {height:40px; position:relative; float:right; border:none; color:#cecece; cursor:pointer;}
+	.b-selector             {height:40px; position:relative; float:right; border:none; color:#cecece; cursor:none;}
 	.b-selector .b-current  {padding:8px 15px 12px; line-height:20px; min-width:18px; height:20px; display:block; background:#000; text-align:center;}
 	.b-selector-page        {width:auto; margin-left:15px;}
 	.b-selector-chapter     {width:auto;}

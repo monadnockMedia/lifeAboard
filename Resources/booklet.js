@@ -97,7 +97,7 @@ function resetBook(){
 		tabWidth:           60,                              // set the width of the tabs
 		tabHeight:          20,                              // set the height of the tabs
 		arrows:             false,                           // adds arrows overlayed over the book edges
-		cursor:             'pointer',                       // cursor css setting for side bar areas
+		cursor:             'none',                       // cursor css setting for side bar areas
 
 		hash:               false,                           // enables navigation using a hash string, ex: #/page/1 for page 1, will affect all booklets with 'hash' enabled
 		keyboard:           false,                            // enables navigation with arrow keys (left: previous, right: next)

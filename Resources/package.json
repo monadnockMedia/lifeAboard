@@ -6,9 +6,9 @@
   "keywords": [ "monadnock", "node-webkit" ],
   "window": {
     "title": "Life Aboard",
-    "toolbar": false,
+    "toolbar": true,
     "frame": false,
-	"kiosk": true,
+	"kiosk": false,
     "width": 1280,
     "height": 1024
   },

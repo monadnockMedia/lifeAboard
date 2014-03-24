@@ -17,6 +17,7 @@ var book_slideTI = new Audio('SOUND/book_slide3.wav');
 var ada_sndTI = new Audio('SOUND/adasnd.wav');
 
 
+
 /* Runs after page loaded */
 $(document).ready(init);
 //$.fx.interval = 5;

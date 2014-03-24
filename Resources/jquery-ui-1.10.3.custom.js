@@ -1478,7 +1478,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 		axis: false,
 		connectToSortable: false,
 		containment: false,
-		cursor: "auto",
+		cursor: "inherit",
 		cursorAt: false,
 		grid: false,
 		handle: false,
@@ -4002,7 +4002,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 		axis: false,
 		connectWith: false,
 		containment: false,
-		cursor: "auto",
+		cursor: "inherit";,
 		cursorAt: false,
 		dropOnEmpty: true,
 		forcePlaceholderSize: false,
@@ -7200,7 +7200,7 @@ $.extend(Datepicker.prototype, {
 			target.disabled = true;
 			inst.trigger.filter("button").
 				each(function() { this.disabled = true; }).end().
-				filter("img").css({opacity: "0.5", cursor: "default"});
+				filter("img").css({opacity: "0.5", cursor: "inherit"});
 		} else if (nodeName === "div" || nodeName === "span") {
 			inline = $target.children("." + this._inlineClass);
 			inline.children().addClass("ui-state-disabled");
